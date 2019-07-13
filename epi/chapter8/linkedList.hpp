@@ -17,13 +17,16 @@ public:
 
   listBuilder &append(listBuilder &&other) {
     if (other.empty()) return *this;
-    if (empty()) {
+    else if (empty()) {
       head = other.head;
       tail = other.tail;
-      return *this;
     }
-    tail->next = other.head;
-    tail = other.tail;
+    else {
+      tail->next = other.head;
+      tail = other.tail;
+    }
+
+    other.head = other.tail = nullptr;
     return *this;
   }
 
