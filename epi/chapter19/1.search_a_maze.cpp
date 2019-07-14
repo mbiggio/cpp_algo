@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-typedef enum {WHITE, BLACK} Color;
+using Color = enum {WHITE, BLACK};
 struct Coordinate {
   bool operator==(const Coordinate &other) const {
     return x == other.x && y == other.y;
