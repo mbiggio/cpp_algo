@@ -71,7 +71,9 @@ vector<int> shortestPath(const vector<vector<edge>> &adj, const int start, const
       explored[chosen.id] = chosen;
       for (const edge &e : adj[chosen.id]) {
 	unexplored.insert({e.end,
-	                   chosen.estimatedDistance==numeric_limits<int>::max()?chosen.estimatedDistance:e.weight+chosen.estimatedDistance,
+	                   chosen.estimatedDistance==numeric_limits<int>::max()?
+			     chosen.estimatedDistance:
+			     e.weight+chosen.estimatedDistance,
 			   chosen.id});
       }
     }
